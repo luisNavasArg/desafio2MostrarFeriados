@@ -16,67 +16,67 @@ Para cambiar el año en la API, hay que cambiar el número 2019 que se encuentra
     https://nolaborables.com.ar/api/v2/feriados/ 
 4. Creamos una función "prepararFeriados"
 
-  	const prepararFeriados =(ev)=>{
-  		ev.preventDefault();
-	};
+  	-const prepararFeriados =(ev)=>{
+  	-	ev.preventDefault();
+	-};
 
 5. Dentro vamos a capturar por el id #a una caja de texto 
     para obtener como valor el año a consultar los no laborables y la 
     guadamos en una variable.
 
- 	const prepararFeriados =(ev)=>{
-  		ev.preventDefault();
-		let a = document.querySelector("#a").value;
-	};
+ 	-const prepararFeriados =(ev)=>{
+  	-	ev.preventDefault();
+	-	let a = document.querySelector("#a").value;
+	-};
 
 6. Declaramos otra variable y guardamos la url de nuestra API
 
-	const prepararFeriados =(ev)=>{
-		ev.preventDefault();
-		let a = document.querySelector("#a").value;
-		let url = `https://nolaborables.com.ar/api/v2/feriados/${a}`;
-	};
+	-const prepararFeriados =(ev)=>{
+	-	ev.preventDefault();
+	-	let a = document.querySelector("#a").value;
+	-	let url = `https://nolaborables.com.ar/api/v2/feriados/${a}`;
+	-};
 
 7. Usamos un método fetch dentro colocamos como parámetro 
     la variable de la url
 
-    const prepararFeriados =(ev)=>{
-		ev.preventDefault();
-		let a = document.querySelector("#a").value;
-		let url = `https://nolaborables.com.ar/api/v2/feriados/${a}`;
-		fetch(url);
+    -const prepararFeriados =(ev)=>{
+	-	ev.preventDefault();
+	-	let a = document.querySelector("#a").value;
+	-	let url = `https://nolaborables.com.ar/api/v2/feriados/${a}`;
+	-	fetch(url);
 	
-	};
+	-};
 
 8. usamos el método then para indicar  que vamos a usar en 
 la función anterior que usaremos un archivo json
 
-	const prepararFeriados =(ev)=>{
-		ev.preventDefault();
-		let a = document.querySelector("#a").value;
-		let url = `https://nolaborables.com.ar/api/v2/feriados/${a}`;
-		fetch(url)
-		.then(res=>res.json());
-		
-	};
+	-const prepararFeriados =(ev)=>{
+	-	ev.preventDefault();
+	-	let a = document.querySelector("#a").value;
+	-	let url = `https://nolaborables.com.ar/api/v2/feriados/${a}`;
+	-	fetch(url)
+	-	.then(res=>res.json());
+	-	
+	-};
 
 9. De nuevo usamos otro método then ahora para hacer un 
     callback y pasamos como parámetro el archivo recibido antes y vamos a guardar 
     los valores en el arreglo vacío que den bemos declarar como global.  
 
-    let api = [];
-    const prepararFeriados =(ev)=>{
-		ev.preventDefault();
-		let a = document.querySelector("#a").value;
-		let url = `https://nolaborables.com.ar/api/v2/feriados/${a}`;
-		fetch(url)
-		.then(res=>res.json())
-		.then((datos)=>{	
-			 api=[...datos]; 
-			 mostrarApi(api);
-	});
+    -let api = [];
+    -const prepararFeriados =(ev)=>{
+	-	ev.preventDefault();
+	-	let a = document.querySelector("#a").value;
+	-	let url = `https://nolaborables.com.ar/api/v2/feriados/${a}`;
+	-	fetch(url)
+	-	.then(res=>res.json())
+	-	.then((datos)=>{	
+	-		 api=[...datos]; 
+	-		 mostrarApi(api);
+		-});
 	
-};
+	-};
 
 10. Creamos el evento load para capturar la clase principal
     usando la propiedad innerHTML dentro de ella añadimos 
@@ -85,19 +85,19 @@ la función anterior que usaremos un archivo json
     capturamos el botón y le agregamos un evento click que 
     va a llamar una función prepaparFeriados
 
-    window.addEventListener("load",()=> {
-		document.querySelector(".principal").innerHTML+=`
-			<form class="form-inline">
-				<div class="form-group mb-2">
-					<label for="a" class="sr-only">Año a consultar: </label>
-					<input class="form-control" type="text" id="a">
-					<button class="button btn-secondary">Mostrar Feriados</button> 
-				</div>
-			</form>
-		`;
-		document.querySelector(".button").addEventListener("click", 
-		prepararFeriados);
-	});
+    -window.addEventListener("load",()=> {
+	-	document.querySelector(".principal").innerHTML+=`
+	-		<form class="form-inline">
+	-			<div class="form-group mb-2">
+	-				<label for="a" class="sr-only">Año a consultar: </label>
+	-				<input class="form-control" type="text" id="a">
+	-				<button class="button btn-secondary">Mostrar Feriados</button> 
+	-			</div>
+	-		</form>
+	-	`;
+	-	document.querySelector(".button").addEventListener("click", 
+	-	prepararFeriados);
+	-});
 
 
 11. Creamos una función para mostrar los datos, allí vamos a 
@@ -107,38 +107,38 @@ la función anterior que usaremos un archivo json
     usamos un ternario para escribir cada mes, lo puedes hacer con if
 
 
-    const mostrarApi=(a)=>{
-		a.forEach((a)=>{
-				document.querySelector(".card-group").innerHTML+=`
-			<div class="col-3 m-3">
-				<div class="card bg-primary text-white">
-					<div class="card-head">
-						<h2 class="text-center">Día: ${a.dia} <br> Mes: ${
-																	a.mes == 1 ? "Enero" : 
-																	a.mes == 2 ? "Febrero" : 
-																	a.mes == 3 ? "Marzo" : 
-																	a.mes == 4 ? "Abril":
-																	a.mes == 5 ? "Mayo":
-																	a.mes == 6 ? "Junio":
-																	a.mes == 7 ? "Julio":
-																	a.mes == 8 ? "Agosto":
-																	a.mes == 9 ? "Septiembre":
-																	a.mes == 10 ? "Octubre":
-																	a.mes == 11 ? "Noviembre":
-																	"Diciembre"
-																	}</h2>		
-					</div>
-					<div class="card-body">
-						<p>${a.motivo}</p>
-					</div>
-					<div class="card-footer">
-						<p>${a.tipo}</p>
-					</div>
-				</div>
-			</div>
-		`;
-		});
-	};
+    -const mostrarApi=(a)=>{
+	-	a.forEach((a)=>{
+	-			document.querySelector(".card-group").innerHTML+=`
+	-		<div class="col-3 m-3">
+	-			<div class="card bg-primary text-white">
+	-				<div class="card-head">
+	-					<h2 class="text-center">Día: ${a.dia} <br> Mes: ${
+	-																a.mes == 1 ? "Enero" : 
+	-																a.mes == 2 ? "Febrero" : 
+	-																a.mes == 3 ? "Marzo" : 
+	-																a.mes == 4 ? "Abril":
+	-																a.mes == 5 ? "Mayo":
+	-																a.mes == 6 ? "Junio":
+	-																a.mes == 7 ? "Julio":
+	-																a.mes == 8 ? "Agosto":
+	-																a.mes == 9 ? "Septiembre":
+	-																a.mes == 10 ? "Octubre":
+	-																a.mes == 11 ? "Noviembre":
+	-																"Diciembre"
+	-																}</h2>		
+	-				</div>
+	-				<div class="card-body">
+	-					<p>${a.motivo}</p>
+	-				</div>
+	-				<div class="card-footer">
+	-					<p>${a.tipo}</p>
+	-				</div>
+	-			</div>
+	-		</div>
+	-	`;
+	-	});
+	-};
 
 
 12. Ya puedes hacer la prueba ejecutando tu live server para ejecutar tu servidor local
