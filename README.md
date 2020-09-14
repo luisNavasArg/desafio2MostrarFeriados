@@ -16,33 +16,33 @@ Para cambiar el año en la API, hay que cambiar el número 2019 que se encuentra
     https://nolaborables.com.ar/api/v2/feriados/ 
 4. Creamos una función "prepararFeriados"
 
- (imagenes/4.png)
+ (https://github.com/luisNavasArg/desafio2MostrarFeriados/blob/master/imagenes/4.png)
 
 5. Dentro vamos a capturar por el id #a una caja de texto 
     para obtener como valor el año a consultar los no laborables y la 
     guadamos en una variable.
 
- (imagenes/5.png)
+ (https://github.com/luisNavasArg/desafio2MostrarFeriados/blob/master/imagenes/5.png)
 
 6. Declaramos otra variable y guardamos la url de nuestra API
 
- (imagenes/6.png)
+ (https://github.com/luisNavasArg/desafio2MostrarFeriados/blob/master/imagenes/6.png)
 
 7. Usamos un método fetch dentro colocamos como parámetro 
     la variable de la url
 
- (imagenes/7.png)
+ (https://github.com/luisNavasArg/desafio2MostrarFeriados/blob/master/imagenes/7.png)
 
 8. usamos el método then para indicar  que vamos a usar en 
 la función anterior que usaremos un archivo json
 
- (imagenes/8.png)
+ (https://github.com//luisNavasArg/desafio2MostrarFeriados/blob/master/imagenes/8.png)
 
 9. De nuevo usamos otro método then ahora para hacer un 
     callback y pasamos como parámetro el archivo recibido antes y vamos a guardar 
     los valores en el arreglo vacío que den bemos declarar como global.  
 
- (imagenes/9.png)
+ (https://github.com/luisNavasArg/desafio2MostrarFeriados/blob/master/imagenes/9.png)
 
 10. Creamos el evento load para capturar la clase principal
     usando la propiedad innerHTML dentro de ella añadimos 
@@ -52,7 +52,7 @@ la función anterior que usaremos un archivo json
     va a llamar una función prepaparFeriados
 
 
- (imagenes/10.png)
+ (https://github.com/luisNavasArg/desafio2MostrarFeriados/blob/master/imagenes/10.png)
 
 11. Creamos una función para mostrar los datos, allí vamos a 
     capturar por la clase "card-group" y le pasamos por cada 
@@ -61,8 +61,8 @@ la función anterior que usaremos un archivo json
     usamos un ternario para escribir cada mes, lo puedes hacer con if
 
 
- (imagenes/11.png)
+ (https://github.com/luisNavasArg/desafio2MostrarFeriados/blob/master/imagenes/11.png)
 
 12. Ya puedes hacer la prueba ejecutando tu live server para ejecutar tu servidor local
 
- (imagenes/12.png)
+ (https://github.com/luisNavasArg/desafio2MostrarFeriados/blob/master/imagenes/12.png)
