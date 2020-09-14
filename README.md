@@ -36,7 +36,7 @@ Para cambiar el año en la API, hay que cambiar el número 2019 que se encuentra
 8. usamos el método then para indicar  que vamos a usar en 
 la función anterior que usaremos un archivo json
 
- ![Image of Yaktocat](https://github.com//luisNavasArg/desafio2MostrarFeriados/blob/master/imagenes/8.png)
+ ![Image of Yaktocat](https://github.com/luisNavasArg/desafio2MostrarFeriados/blob/master/imagenes/8.png)
 
 9. De nuevo usamos otro método then ahora para hacer un 
     callback y pasamos como parámetro el archivo recibido antes y vamos a guardar 
